@@ -3,7 +3,7 @@ import Player from "../Components/Player";
 import { useState } from "react";
 import Log from "../Components/Log";
 import { WINNING_COMBINATIONS } from "../winning-combinations";
-import GameOver from "../Components/Gameover";
+import GameOverStep from "../Components/GameOverStep";
 
 const PLAYERS = {
   X: "Player 1",
@@ -112,7 +112,7 @@ function App() {
           />
         </ol>
         {(winner || hasDraw) && (
-          <GameOver winner={winner} onRestart={handleRestart} />
+          <GameOverStep winner={winner} onRestart={handleRestart} />
         )}
         <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
